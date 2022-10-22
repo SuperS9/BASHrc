@@ -45,7 +45,7 @@ function listPorts(){
 
 
 	#copiamos los puertos al portapapeles
-#	echo $puertos | tr '\n' ' '| xclip -selection clipboard
+	echo $ports | tr '\n' ' '| xclip -selection clipboard
 
 
 	echo -e "\n${yellowColour}[*] Puertos copiados al portapapeles${endColour}\n"
