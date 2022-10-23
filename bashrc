@@ -31,8 +31,8 @@ function listPorts(){
 	#nmap -p- --open -T5 -v -n -oG allPorts {IP_ADRESS}
 
 	#declaramos las variables
-	ip_address=$(cat allPorts | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u)
-	ports=$(cat allPorts | grep  -oP '\d{1,5}/open' | awk '{print $1}' FS="/" | xargs | tr ' ' ",_")
+	ip_address=$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u)
+	ports=$(cat $1 | grep  -oP '\d{1,5}/open' | awk '{print $1}' FS="/" | xargs | tr ' ' ",_")
 
 	#printeamos
 	echo -e "\n${yellowColour}[*] Extrayendo informacion...${endColour}\n"
