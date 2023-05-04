@@ -1,6 +1,22 @@
 #!/bin/bash
 
-miip=`curl ifconfig.me 2>/dev/null`
+url="ifconfig.me"
+google="www.google.com"
+
+# COMPROBAMOS SI TENEMOS INTERNET
+internet=0
+ping -c 1 -w 2 $google > /dev/null 2>&1
+
+if [ $? -eq 0 ]
+then
+	internet=1
+else
+	echo "No tienes acceso a internet"
+	exit 1
+fi
+
+# OBTENEMOS LA IP
+miip=`curl $url 2>/dev/null`
 
 echo "Tu IP publica es: "$miip
 
