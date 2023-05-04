@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Cargamos los colorines
+if [ -f ~/.colores.sh ]
+then
+        source ~/.colores.sh
+fi
+
 url="ifconfig.me"
 google="www.google.com"
 
